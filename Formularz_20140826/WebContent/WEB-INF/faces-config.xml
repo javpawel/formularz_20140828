@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+    version="2.2">
+
+	<managed-bean>
+		<managed-bean-name>regFormBean</managed-bean-name>
+		<managed-bean-class>Beans.regFormBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+	</managed-bean>
+	
+	<validator>
+		<validator-id>validatorFirstname</validator-id>
+		<validator-class>Beans.regFormFirstnameImplValidator</validator-class>
+	</validator>
+
+	<validator>
+		<validator-id>validatorLastname</validator-id>
+		<validator-class>Beans.regFormLastnameImplValidator</validator-class>
+	</validator>
+	
+	<validator>
+		<validator-id>validatorLogin</validator-id>
+		<validator-class>Beans.regFormLoginImplValidator</validator-class>
+	</validator>
+	
+	<validator>
+		<validator-id>validatorEmail</validator-id>
+		<validator-class>Beans.regFormEmailImplValidator</validator-class>
+	</validator>
+	
+	<validator>
+		<validator-id>validatorAgree</validator-id>
+		<validator-class>Beans.regFormAgreeImplValidator</validator-class>
+	</validator>
+</faces-config>

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+
+<ui:composition template="./layoutIndex.xhtml">
+
+	<ui:define name="content">
+	
+
+	
+	   	<h1>Formularz rejestracyjny</h1>
+	   	<h:form id="regForm">
+	   		<h:outputLabel value="Imię:" />
+	   		<h:inputText id="firstname" value="#{regFormBean.firstname}">
+	   			<f:validator validatorId="validatorFirstname"/>
+	   		</h:inputText>
+	   		<h:message for="firstname"/>
+	   		
+	   		<h:outputLabel value="Nazwisko:"/>
+	   		<h:inputText id="lastname" value="#{regFormBean.lastname}">
+	   			<f:validator validatorId="validatorLastname"/>
+	   		</h:inputText>
+	   		<h:message for="lastname"/>
+	   		
+	   		<h:outputLabel value="Email:"/>
+	   		<h:inputText id="email" value="#{regFormBean.email}">
+	   			<f:validator validatorId="validatorEmail"/>
+	   		</h:inputText>
+	   		<h:message for="email"/>
+	   		
+	   		<h:outputLabel value="login:"/>
+	   		<h:inputText id="login" value="#{regFormBean.login}">
+	   			<f:validator validatorId="validatorLogin"/>
+	   		</h:inputText>
+	   		<h:message for="login"/>
+	   		
+	   		<h:outputLabel value="Hasło:"/>
+	   		<h:inputText id="pass1" value="#{regFormBean.pass1}"></h:inputText>
+	   		<h:message for="pass1"/>
+	   		
+	   		<h:outputLabel value="Powtórz hasło:"/>
+	   		<h:inputText id="pass2" value="#{regFormBean.pass2}"></h:inputText>
+	   		<h:message for="pass2"/>
+	   		
+	   		<h:selectBooleanCheckbox id="agree" value="#{regFormBean.agree}">
+	   			<f:validator validatorId="validatorAgree"/>
+	   		</h:selectBooleanCheckbox>
+	   		<h:outputText value="Zgoda na..."/>
+	   		<h:message for="agree"/>
+	   		
+	   		<h:commandButton value="Rejestruj" action="#{regFormBean.register}"/>
+	   	</h:form>
+	</ui:define>
+
+</ui:composition>
+</html>
